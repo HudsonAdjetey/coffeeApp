@@ -64,22 +64,28 @@ const Page = () => {
               fontSize: 26,
               letterSpacing: 1,
               fontWeight: "400",
-            }}
-          >
-            Login
-          </Text>
-          <Text
-            style={{
-              fontSize: 16,
-              color: Color.lightGray,
-              textTransform: "capitalize",
               marginBottom: 25,
             }}
           >
-            Enter your Credentials to continue
+            Create an account
           </Text>
         </View>
         <View>
+          <TextInput
+            style={{
+              borderBottomWidth: 2,
+              borderBottomColor: Color.lightGray,
+              paddingVertical: 5,
+
+              fontSize: 17,
+              paddingHorizontal: 10,
+              marginBottom: 18,
+              color: Color.white,
+            }}
+            placeholder="Username"
+            placeholderTextColor={Color.lightGray}
+            autoFocus={false}
+          />
           <TextInput
             style={{
               borderBottomWidth: 2,
@@ -92,9 +98,10 @@ const Page = () => {
               marginBottom: 18,
               color: Color.white,
             }}
-            placeholder="Username"
+            placeholder="email@domain.com"
             placeholderTextColor={Color.lightGray}
             autoFocus={false}
+            keyboardType="email-address"
           />
           <TextInput
             style={{
@@ -130,13 +137,13 @@ const Page = () => {
                 fontSize: 18,
               }}
             >
-              Sign In
+              Sign Up
             </Text>
           </TouchableOpacity>
 
           {/* </Link> */}
           <Link
-            href={"/signUp"}
+            href={"/signIn"}
             style={{
               fontSize: 16,
               marginTop: 10,
@@ -151,7 +158,7 @@ const Page = () => {
                 fontSize: 16,
               }}
             >
-              New User?
+              Already have an account
             </Text>
           </Link>
         </View>
