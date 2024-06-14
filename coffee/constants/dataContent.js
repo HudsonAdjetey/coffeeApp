@@ -1,6 +1,6 @@
-import Image1 from "../assets/images/image1";
-import Image3 from "../assets/images/image2";
-import Image2 from "../assets/images/image3";
+import Image1 from "../assets/images/image1.png";
+import Image3 from "../assets/images/image2.png";
+import Image2 from "../assets/images/image3.png";
 
 export const DataContent = [
   {

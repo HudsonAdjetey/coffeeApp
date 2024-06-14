@@ -13,6 +13,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Color from "../../constants/Color";
 import { img } from "../../constants/images";
 import Ionic from "react-native-vector-icons/Ionicons";
+import Icon from "react-native-vector-icons/FontAwesome6";
+import { DataContent } from "../../constants/dataContent";
 
 const Page = () => {
   const [activeData, setActiveData] = useState(0);
@@ -147,10 +149,54 @@ const Page = () => {
                 </View>
               )}
             />
+            <FlatList
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              style={{
+                marginTop: 20,
+                marginBottom: 20,
+              }}
+              data={DataContent}
+              key={(item, index) => item.id + index}
+              keyExtractor={(item, index) => item.id + index}
+              renderItem={({ item, index }) => (
+                <View
+                  style={{
+                    flex: 1,
+                    gap: 20,
+                    position: "relative",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      fontWeight: "600",
+                      marginRight: 10,
+                      color: Color.unactive,
+                    }}
+                    onPress={() => handleSetActive(index)}
+                  >
+                    <View>
+                      <View>
+                        <Image source={item.img} />
+                      </View>
+                      <Text>{item.title}</Text>
+                      <Text>{item.subContent}</Text>
+                      <View>
+                        <View>
+                          <Text>Gh</Text>
+                          <Text>{item.price}</Text>
+                        </View>
+                        <Icon name="plus" color={"red"} />
+                      </View>
+                    </View>
+                  </Text>
+                </View>
+              )}
+            />
           </View>
         )}
       />
-      <Text style={{ color: Color.white, fontSize: 30 }}>Hello</Text>
       <StatusBar barStyle={"light-content"} />
     </SafeAreaView>
   );
