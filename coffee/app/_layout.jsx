@@ -48,6 +48,17 @@ const Page = () => {
             headerShown: false,
           }}
         />
+        <Stack.Screen
+          name="(tabs)"
+          options={{
+            title: "",
+            // headerStyle: { backgroundColor: "red" },
+            // headerTintColor: "white",
+            headerShadowVisible: false,
+            headerBackTitle: "",
+            headerShown: false,
+          }}
+        />
       </Stack>
     </>
   );

@@ -68,7 +68,7 @@ export default function App() {
       >
         {/* <Link href={"/(auth)/signIn"} asChild> */}
         <TouchableOpacity
-          onPress={() => router.push("/signUp")}
+          onPress={() => router.push("/homePage")}
           style={{
             marginBottom: 30,
             height: 60,
