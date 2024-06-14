@@ -5,6 +5,8 @@ import FavoritePage from "./Favorite";
 import OrderHistoryPage from "./OrderHistory";
 import Ionic from "react-native-vector-icons/Ionicons";
 import Color from "../../constants/Color";
+import { StyleSheet } from "react-native";
+import { BlurView } from "expo-blur";
 const Tab = createMaterialBottomTabNavigator();
 
 export default function TabLayout() {
@@ -13,7 +15,18 @@ export default function TabLayout() {
       initialRouteName="Home"
       sceneAnimationEnabled
       backBehavior="order"
-      barStyle={{ backgroundColor: "rgba(12, 15, 20, 0.1)" }}
+      barStyle={[
+        {
+          position: "absolute",
+          left: 20,
+          right: 20,
+          //   height: 90,
+          backgroundColor: "rgba(234, 234, 234,  .7)",
+          borderRadius: 16,
+          overflow: "hidden",
+        },
+        styles.shadow,
+      ]}
       activeIndicatorStyle={{ backgroundColor: "transparent" }}
       labeled={false}
       activeColor={Color.secondary}
@@ -58,3 +71,16 @@ export default function TabLayout() {
     </Tab.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  shadow: {
+    shadowColor: "#7F5DF0",
+    shadowOffset: {
+      width: 10,
+      height: 10,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.5,
+    elevation: 5,
+  },
+});
