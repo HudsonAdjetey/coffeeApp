@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from "react-native";
 import React, { useState } from "react";
@@ -15,12 +16,25 @@ import { img } from "../../constants/images";
 import Ionic from "react-native-vector-icons/Ionicons";
 import Icon from "react-native-vector-icons/FontAwesome6";
 import { DataContent, dataBeans } from "../../constants/dataContent";
+import { router, usePathname } from "expo-router";
 
 const Page = () => {
   const [activeData, setActiveData] = useState(0);
   const data = ["All", "Cappuccino", "Espresso", "Americano", "Macchiato"];
   const handleSetActive = (index) => {
     setActiveData(index);
+  };
+  const [pathname, setPathname] = usePathname();
+  const [query, setQuery] = useState("");
+  const navigateToIndPage = (item) => {
+    console.log(item);
+    if (pathname.startsWith("/indPage")) {
+      router.setParams({ item });
+    } else {
+      router.push(
+        `/indPage/[query]?item=${encodeURIComponent(JSON.stringify(item))}`
+      );
+    }
   };
   return (
     <SafeAreaView style={styles.container}>
@@ -29,7 +43,7 @@ const Page = () => {
         numColumns={2}
         style={{ gap: 20 }}
         key={(item, index) => index}
-        keyExtractor={(item, index) => index}
+        keyExtractor={(item, index) => item.id}
         renderItem={({ item, index }) => (
           <View
             style={{
@@ -55,7 +69,8 @@ const Page = () => {
                   overflow: "hidden",
                 }}
               >
-                <View
+                <TouchableOpacity
+                  onPress={() => navigateToIndPage(item)}
                   style={{
                     alignItems: "center",
                     justifyContent: "center",
@@ -70,7 +85,7 @@ const Page = () => {
                     }}
                     source={item.img}
                   />
-                </View>
+                </TouchableOpacity>
                 <Text
                   style={{
                     fontSize: 20,
