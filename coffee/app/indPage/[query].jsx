@@ -190,6 +190,37 @@ const IndPage = () => {
             {/* SUBCONTENT */}
           </View>
           {/* HEADER BANNER */}
+
+          {/* DESCRIPTION */}
+          <View
+            style={{
+              paddingHorizontal: 24,
+              marginBottom: 10,
+            }}
+          >
+            <Text
+              style={{
+                color: Color.lightGray,
+                fontSize: 25,
+                fontWeight: "600",
+                marginTop: 20,
+              }}
+            >
+              Desription
+            </Text>
+            <Text
+              style={{
+                color: Color.white,
+                lineHeight: 24,
+                fontSize: 16,
+                marginTop: 10,
+                fontWeight: "400",
+              }}
+            >
+              {item.description}
+            </Text>
+          </View>
+          {/* DESCRIPTION */}
         </View>
         /* CONTENT */
       ))}
