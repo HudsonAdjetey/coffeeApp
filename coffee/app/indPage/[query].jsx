@@ -3,6 +3,9 @@ import { View, Text, Image } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { BlurView } from "expo-blur";
+import Color from "../../constants/Color";
+import { icon } from "../../constants/images";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const IndPage = () => {
   const { item } = useLocalSearchParams();
@@ -17,7 +20,12 @@ const IndPage = () => {
   console.log("Received item:", item);
 
   return (
-    <View>
+    <View
+      style={{
+        backgroundColor: Color.primary,
+        flex: 1,
+      }}
+    >
       {data.map((item, index) => (
         <View key={index}>
           <View
@@ -56,15 +64,99 @@ const IndPage = () => {
                 }}
                 blurReductionFactor={1}
               />
-              <Text style={{ fontSize: 20, fontWeight: "600", color: "red" }}>
-                {item.title}
-              </Text>
-              <Text style={{ fontSize: 17, color: "red" }}>
-                {item.subContent}
-              </Text>
-              <Text style={{ fontSize: 24, color: "red", marginTop: 10 }}>
-                Price: {item.price}
-              </Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <View>
+                  <Text
+                    style={{
+                      fontSize: 30,
+                      color: "white",
+                      fontWeight: "600",
+                      letterSpacing: 1,
+                    }}
+                  >
+                    {item.title}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 18,
+                      color: Color.lightGray,
+                      fontWeight: "600",
+                      letterSpacing: 1,
+                    }}
+                  >
+                    From Africa
+                  </Text>
+                </View>
+
+                <View
+                  style={{
+                    flexDirection: "row",
+                    gap: 20,
+                  }}
+                >
+                  <View
+                    style={{
+                      backgroundColor: "#141921",
+                      height: 65,
+                      width: 65,
+                      padding: 5,
+                      borderRadius: 10,
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Image
+                      style={{
+                        width: "80%",
+                        height: "80%",
+                      }}
+                      source={icon.Bean}
+                      resizeMode="cover"
+                    />
+                  </View>
+                  <View
+                    style={{
+                      height: 65,
+                      width: 65,
+                      backgroundColor: "#141921",
+
+                      borderRadius: 10,
+                      padding: 5,
+                      alignItems: "center",
+                      gap: 5,
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Icon size={35} name="location" color={Color.secondary} />
+                  </View>
+                </View>
+              </View>
+              <View>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: 10,
+                    marginTop: 20,
+                  }}
+                >
+                  <Icon name="star-sharp" size={30} color={Color.secondary} />
+                  <Text
+                    style={{
+                      fontSize: 25,
+                      fontWeight: "600",
+                      color: Color.white,
+                    }}
+                  >
+                    4.5
+                  </Text>
+                </View>
+              </View>
             </View>
           </View>
         </View>

@@ -10,7 +10,9 @@ export const img = {
 };
 
 import GoogleIcon from "../assets/images/icon/iconGoogle.png";
+import Bean from "../assets/images/icon/bean.png";
 
 export const icon = {
   GoogleIcon,
+  Bean,
 };
