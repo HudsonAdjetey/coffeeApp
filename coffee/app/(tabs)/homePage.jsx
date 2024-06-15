@@ -1,4 +1,5 @@
 import {
+  Dimensions,
   FlatList,
   Image,
   ScrollView,
@@ -36,27 +37,27 @@ const Page = () => {
       );
     }
   };
+  const { width } = Dimensions.get("screen" || "window");
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
         data={dataBeans}
-        numColumns={2}
-        style={{ gap: 20 }}
+        numColumns={width > 450 ? 2 : 1}
         key={(item, index) => index}
         keyExtractor={(item, index) => item.id}
         renderItem={({ item, index }) => (
           <View
             style={{
-              marginRight: 10,
+              marginRight: width < 450 ? 0 : 14,
               marginBottom: 20,
+              justifyContent: "space-between",
+              gap: 20,
             }}
           >
-            <Text
+            <View
               style={{
-                fontSize: 20,
-                fontWeight: "600",
-                marginRight: 4,
-                color: Color.unactive,
+                alignItems: "center",
+                justifyContent: "space-between",
               }}
             >
               <View
@@ -79,7 +80,8 @@ const Page = () => {
                 >
                   <Image
                     style={{
-                      width: "100%",
+                      width: width > 450 ? 140 : "100%",
+
                       borderRadius: 10,
                       marginBottom: 15,
                     }}
@@ -157,7 +159,7 @@ const Page = () => {
                   </View>
                 </View>
               </View>
-            </Text>
+            </View>
           </View>
         )}
         ListHeaderComponent={() => (
