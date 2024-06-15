@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { BlurView } from "expo-blur";
@@ -10,15 +10,22 @@ import Icon from "react-native-vector-icons/Ionicons";
 const IndPage = () => {
   const { item } = useLocalSearchParams();
   const [data, setData] = useState([]);
+  const [selectedSize, setSelectedSize] = useState("");
   useEffect(() => {
     const decodedItem = JSON.parse(decodeURIComponent(item));
     if (decodedItem) {
       setData([decodedItem]);
     }
   }, [item]);
-
-  console.log("Received item:", item);
-
+  //   console.log(selectedSize);
+  useEffect(() => {
+    if (item && data.length > 0) {
+      setSelectedSize(data[0].size[0]);
+    }
+  }, [item, data]);
+  const handleSelectSize = (size) => {
+    setSelectedSize(size);
+  };
   return (
     <View
       style={{
@@ -238,6 +245,40 @@ const IndPage = () => {
             >
               Size
             </Text>
+            <View
+              style={{
+                flexDirection: "row",
+                gap: 10,
+                justifyContent: "space-between",
+                marginTop: 15,
+              }}
+            >
+              {item?.size?.map((size, index) => (
+                <TouchableOpacity
+                  key={index}
+                  style={{
+                    flexBasis: 110,
+                    backgroundColor: "red",
+                    paddingVertical: 10,
+                    paddingHorizontal: 10,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderRadius: 10,
+                  }}
+                >
+                  <Text
+                    style={{
+                      color:
+                        selectedSize === size ? Color.secondary : Color.white,
+                      fontSize: 22,
+                      fontWeight: "400",
+                    }}
+                  >
+                    {size}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
           {/* SIZE */}
         </View>
