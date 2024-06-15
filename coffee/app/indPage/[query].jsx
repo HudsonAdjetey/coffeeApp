@@ -40,7 +40,6 @@ const IndPage = () => {
           <View
             style={{
               flexDirection: "row",
-              backgroundColor: "red",
               width: "100%",
               height: 460,
             }}
@@ -60,6 +59,8 @@ const IndPage = () => {
                 width: "100%",
                 paddingVertical: 15,
                 paddingHorizontal: 20,
+                borderTopRightRadius: 20,
+                borderTopLeftRadius: 20,
               }}
             >
               <BlurView
