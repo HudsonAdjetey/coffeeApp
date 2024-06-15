@@ -14,6 +14,8 @@ export const DataContent = [
     price: 3.99,
     subContent: "with steamed milk",
     img: Image1,
+    description:
+      "Cappuccino is a latte made with more foam than steamed milk, often with a sprinkle of cocoa powder or cinnamon on top.",
   },
   {
     id: 29,
@@ -21,6 +23,8 @@ export const DataContent = [
     price: 4.2,
     subContent: "with steamed milk",
     img: Image2,
+    description:
+      "Cappuccino is a latte made with more foam than steamed milk, often with a sprinkle of cocoa powder or cinnamon on top.",
   },
   {
     id: 30,
@@ -28,6 +32,8 @@ export const DataContent = [
     price: 4.2,
     subContent: "with foamed milk",
     img: Image3,
+    description:
+      "Espresso is a latte made with more foam than foamed milk, often with a sprinkle of cocoa powder or cinnamon on top.",
   },
   {
     id: 48,
@@ -35,6 +41,8 @@ export const DataContent = [
     price: 4.2,
     subContent: "with foamed milk",
     img: Image2,
+    description:
+      "Macchiato is a latte made with more foam than foamed milk, often with a sprinkle of cocoa powder or cinnamon on top.",
   },
   {
     id: 59,
@@ -42,6 +50,8 @@ export const DataContent = [
     price: 4.2,
     subContent: "with foamed milk",
     img: Image1,
+    description:
+      "Macchiato is a latte made with more foam than foamed milk, often with a sprinkle of cocoa powder or cinnamon on top.",
   },
 ];
 
@@ -52,6 +62,8 @@ export const dataBeans = [
     price: 4.99,
     subContent: "High-quality beans",
     img: Bean1,
+    description:
+      "Arabica beans are by far the most popular type of coffee beans, making up about 60% of the world's coffee. These tasty beans originated many centuries ago in the highlands of Ethiopia, and may even be the first coffee beans ever consumed! ",
   },
   {
     id: 212,
@@ -59,6 +71,8 @@ export const dataBeans = [
     price: 3.99,
     subContent: "Medium roasted",
     img: Bean2,
+    description:
+      "Robusta beans are known for their bold, earthy flavor and are often used in instant coffee blends.They are easier to grow and more disease- resistant than Arabica beans, which makes them a popular choice for many coffee producers.",
   },
   {
     id: 310,
@@ -66,6 +80,8 @@ export const dataBeans = [
     price: 4.2,
     subContent: "with foamed milk",
     img: Bean3,
+    description:
+      "Espresso beans are a blend of Arabica and Robusta beans, roasted to perfection to bring out the perfect balance of flavors.They are often used in espresso blends and are known for their rich, bold flavor.",
   },
   {
     id: 448,
@@ -73,6 +89,8 @@ export const dataBeans = [
     price: 4.2,
     subContent: "with foamed milk",
     img: Bean4,
+    description:
+      "Macchiato beans are a blend of Arabica and Robusta beans, roasted to perfection to bring out the perfect balance of flavors.They are often used in espresso blends and are known for their rich, bold flavor.",
   },
   {
     id: 519,
@@ -80,6 +98,8 @@ export const dataBeans = [
     price: 4.2,
     subContent: "with foamed milk",
     img: Bean2,
+    description:
+      "Macchiato beans are a blend of Arabica and Robusta beans, roasted to perfection to bring out the perfect balance of flavors.They are often used in espresso blends and are known for their rich, bold flavor.",
   },
   {
     id: 231,
@@ -87,6 +107,8 @@ export const dataBeans = [
     price: 4.99,
     subContent: "High-quality beans",
     img: Bean4,
+    description:
+      "Arabica beans are by far the most popular type of coffee beans, making up about 60% of the world's coffee. These tasty beans originated many centuries ago in the highlands of Ethiopia, and may even be the first coffee beans ever consumed! ",
   },
   {
     id: 112,
@@ -94,5 +116,7 @@ export const dataBeans = [
     price: 3.99,
     subContent: "Medium roasted",
     img: Bean1,
+    description:
+      "Robusta beans are known for their bold, earthy flavor and are often used in instant coffee blends.They are easier to grow and more disease- resistant than Arabica beans, which makes them a popular choice for many coffee producers.",
   },
 ];
