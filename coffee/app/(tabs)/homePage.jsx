@@ -157,9 +157,9 @@ const Page = () => {
                 marginBottom: 20,
               }}
               data={DataContent}
-              key={(item, index) => item.id + index}
-              keyExtractor={(item, index) => item.id + index}
-              renderItem={({ item, index }) => (
+              key={(item) => Math.random()}
+              keyExtractor={(item) => item.id++}
+              renderItem={({ item }) => (
                 <View
                   style={{
                     flex: 1,
@@ -174,7 +174,6 @@ const Page = () => {
                       marginRight: 10,
                       color: Color.unactive,
                     }}
-                    onPress={() => handleSetActive(index)}
                   >
                     <View>
                       <View>
@@ -185,8 +184,9 @@ const Page = () => {
                       <View>
                         <View>
                           <Text>Gh</Text>
-                          <Text>{item.price}</Text>
+                          <Text style={{ color: "red" }}></Text>
                         </View>
+
                         <Icon name="plus" color={"red"} />
                       </View>
                     </View>

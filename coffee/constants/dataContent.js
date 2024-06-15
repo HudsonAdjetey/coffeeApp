@@ -4,35 +4,35 @@ import Image2 from "../assets/images/image3.png";
 
 export const DataContent = [
   {
-    id: 1,
+    id: 91,
     title: "Cappuccino",
     price: 3.99,
     subContent: "with steamed milk",
     img: Image1,
   },
   {
-    id: 2,
+    id: 29,
     title: "Cappuccino",
     price: 4.2,
     subContent: "with steamed milk",
     img: Image2,
   },
   {
-    id: 3,
+    id: 30,
     title: "Espresso",
     price: 4.2,
     subContent: "with foamed milk",
     img: Image3,
   },
   {
-    id: 4,
+    id: 48,
     title: "Macchiato",
     price: 4.2,
     subContent: "with foamed milk",
     img: Image2,
   },
   {
-    id: 5,
+    id: 59,
     title: "Macchiato",
     price: 4.2,
     subContent: "with foamed milk",
