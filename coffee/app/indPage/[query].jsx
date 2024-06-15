@@ -157,6 +157,22 @@ const IndPage = () => {
                   </Text>
                 </View>
               </View>
+
+              <Text
+                style={{
+                  fontSize: 20,
+                  color: Color.white,
+                  maxWidth: 185,
+                  textAlign: "center",
+
+                  padding: 10,
+                  paddingVertical: 15,
+                  borderRadius: 10,
+                  backgroundColor: "#141921",
+                }}
+              >
+                Medium Roasted
+              </Text>
             </View>
           </View>
         </View>
