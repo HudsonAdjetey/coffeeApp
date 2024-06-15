@@ -250,7 +250,9 @@ const IndPage = () => {
                 flexDirection: "row",
                 gap: 10,
                 justifyContent: "space-between",
+                alignItems: "center",
                 marginTop: 15,
+                flexWrap: "wrap",
               }}
             >
               {item?.size?.map((size, index) => (
@@ -258,13 +260,18 @@ const IndPage = () => {
                   key={index}
                   style={{
                     flexBasis: 110,
-                    backgroundColor: "red",
+                    backgroundColor: "#141921",
                     paddingVertical: 10,
                     paddingHorizontal: 10,
+                    height: 60,
                     justifyContent: "center",
                     alignItems: "center",
                     borderRadius: 10,
+                    borderWidth: selectedSize === size ? 2 : 0,
+                    borderColor: selectedSize === size ? Color.secondary : "",
+                    borderStyle: "solid",
                   }}
+                  onPress={() => handleSelectSize(size)}
                 >
                   <Text
                     style={{
