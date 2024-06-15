@@ -41,7 +41,7 @@ const IndPage = () => {
             style={{
               flexDirection: "row",
               width: "100%",
-              height: 460,
+              height: 380,
             }}
           >
             <Image
@@ -241,7 +241,7 @@ const IndPage = () => {
                 color: Color.lightGray,
                 fontSize: 25,
                 fontWeight: "600",
-                marginTop: 20,
+                marginTop: 10,
               }}
             >
               Size
@@ -289,6 +289,53 @@ const IndPage = () => {
             </View>
           </View>
           {/* SIZE */}
+
+          {/* BASE ~ PRICE AND CART BUTTON */}
+          <View>
+            <View>
+              <Text
+                style={{
+                  color: Color.lightGray,
+                }}
+              >
+                Price
+              </Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  gap: 5,
+                  alignItems: "center",
+                }}
+              >
+                <Text
+                  style={{
+                    color: Color.secondary,
+                    fontSize: 21,
+                    fontWeight: "500",
+                  }}
+                >
+                  GH
+                </Text>
+                <Text
+                  style={{
+                    color: Color.white,
+                    fontSize: 30,
+                    fontWeight: "500",
+                  }}
+                >
+                  {item.price}
+                </Text>
+              </View>
+            </View>
+            <TouchableOpacity
+              style={{
+                backgroundColor: Color.secondary,
+              }}
+            >
+              <Text>Add to cart</Text>
+            </TouchableOpacity>
+          </View>
+          {/* BASE ~ PRICE AND CART BUTTON */}
         </View>
         /* CONTENT */
       ))}
