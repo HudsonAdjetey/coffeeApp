@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, Dimensions } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { BlurView } from "expo-blur";
@@ -26,6 +26,7 @@ const IndPage = () => {
   const handleSelectSize = (size) => {
     setSelectedSize(size);
   };
+  const { width } = Dimensions.get("screen" || "window");
   return (
     <View
       style={{
@@ -41,7 +42,7 @@ const IndPage = () => {
             style={{
               flexDirection: "row",
               width: "100%",
-              height: 380,
+              height: 400,
             }}
           >
             <Image
@@ -291,8 +292,19 @@ const IndPage = () => {
           {/* SIZE */}
 
           {/* BASE ~ PRICE AND CART BUTTON */}
-          <View>
-            <View>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              marginTop: 50,
+              paddingHorizontal: 24,
+            }}
+          >
+            <View
+              style={{
+                alignItems: "center",
+              }}
+            >
               <Text
                 style={{
                   color: Color.lightGray,
@@ -303,8 +315,7 @@ const IndPage = () => {
               <View
                 style={{
                   flexDirection: "row",
-                  gap: 5,
-                  alignItems: "center",
+                  gap: 9,
                 }}
               >
                 <Text
@@ -312,6 +323,7 @@ const IndPage = () => {
                     color: Color.secondary,
                     fontSize: 21,
                     fontWeight: "500",
+                    alignSelf: "flex-end",
                   }}
                 >
                   GH
@@ -330,9 +342,21 @@ const IndPage = () => {
             <TouchableOpacity
               style={{
                 backgroundColor: Color.secondary,
+                flexBasis: width < 420 ? "50%" : "",
+                width: width > 420 && 200,
+                borderRadius: 19,
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              <Text>Add to cart</Text>
+              <Text
+                style={{
+                  fontSize: 20,
+                  color: Color.white,
+                }}
+              >
+                Add to cart
+              </Text>
             </TouchableOpacity>
           </View>
           {/* BASE ~ PRICE AND CART BUTTON */}
