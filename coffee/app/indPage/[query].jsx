@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, Image } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { BlurView } from "expo-blur";
 
 const IndPage = () => {
   const { item } = useLocalSearchParams();
@@ -33,14 +34,39 @@ const IndPage = () => {
               resizeMode="cover"
               resizeMethod="resize"
             />
+
+            <View
+              style={{
+                position: "absolute",
+                bottom: 0,
+                backgroundColor: "rgba(0, 0, 0, 0.3)",
+                width: "100%",
+                paddingVertical: 15,
+                paddingHorizontal: 20,
+              }}
+            >
+              <BlurView
+                intensity={8}
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  right: 0,
+                  height: "100%",
+                  width: "100%",
+                }}
+                blurReductionFactor={1}
+              />
+              <Text style={{ fontSize: 20, fontWeight: "600", color: "red" }}>
+                {item.title}
+              </Text>
+              <Text style={{ fontSize: 17, color: "red" }}>
+                {item.subContent}
+              </Text>
+              <Text style={{ fontSize: 24, color: "red", marginTop: 10 }}>
+                Price: {item.price}
+              </Text>
+            </View>
           </View>
-          <Text style={{ fontSize: 20, fontWeight: "600", color: "black" }}>
-            {item.title}
-          </Text>
-          <Text style={{ fontSize: 17, color: "gray" }}>{item.subContent}</Text>
-          <Text style={{ fontSize: 24, color: "blue", marginTop: 10 }}>
-            Price: {item.price}
-          </Text>
         </View>
       ))}
     </View>
