@@ -26,6 +26,7 @@ const Page = () => {
     <SafeAreaView style={styles.container}>
       <FlatList
         data={data}
+        numColumns={2}
         key={(item, index) => index}
         keyExtractor={(item, index) => index}
         renderItem={({ item, index }) => (
@@ -157,14 +158,15 @@ const Page = () => {
                 marginBottom: 20,
               }}
               data={DataContent}
-              key={(item) => Math.random()}
-              keyExtractor={(item) => item.id++}
+              key={(items) => Math.random()}
+              keyExtractor={(items) => items.id++}
               renderItem={({ item }) => (
                 <View
                   style={{
                     flex: 1,
-                    gap: 20,
+                    // gap: 20,
                     position: "relative",
+                    marginRight: 20,
                   }}
                 >
                   <Text
@@ -175,25 +177,115 @@ const Page = () => {
                       color: Color.unactive,
                     }}
                   >
-                    <View>
-                      <View>
-                        <Image source={item.img} />
+                    <View
+                      style={{
+                        backgroundColor: "rgba(38, 43, 51, 0.63)",
+                        width: 200,
+                        padding: 12,
+                        borderRadius: 10,
+                        overflow: "hidden",
+                      }}
+                    >
+                      <View
+                        style={{
+                          alignItems: "center",
+                          justifyContent: "center",
+                          flexDirection: "row",
+                        }}
+                      >
+                        <Image
+                          style={{
+                            width: "100%",
+                            borderRadius: 10,
+                            marginBottom: 15,
+                          }}
+                          source={item.img}
+                        />
                       </View>
-                      <Text>{item.title}</Text>
-                      <Text>{item.subContent}</Text>
-                      <View>
-                        <View>
-                          <Text>Gh</Text>
-                          <Text style={{ color: "red" }}></Text>
+                      <Text
+                        style={{
+                          fontSize: 20,
+                          color: Color.white,
+                          fontWeight: "600",
+                          letterSpacing: 1,
+                        }}
+                      >
+                        {item.title}
+                      </Text>
+                      <Text
+                        style={{
+                          fontSize: 17,
+                          letterSpacing: 1,
+                          color: Color.lightGray,
+                        }}
+                      >
+                        {item.subContent}
+                      </Text>
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          marginTop: 15,
+                          gap: 25,
+                        }}
+                      >
+                        <View
+                          style={{
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            gap: 10,
+                          }}
+                        >
+                          <Text
+                            style={{
+                              fontSize: 23,
+                              color: Color.secondary,
+                              marginTop: 14,
+                            }}
+                          >
+                            Gh
+                          </Text>
+                          <Text
+                            style={{
+                              fontSize: 24,
+                              color: Color.white,
+                              marginTop: 14,
+                              fontWeight: "600",
+                            }}
+                          >
+                            {item.price}
+                          </Text>
                         </View>
-
-                        <Icon name="plus" color={"red"} />
+                        <View
+                          style={{
+                            backgroundColor: Color.secondary,
+                            flexDirection: "row",
+                            width: 40,
+                            height: 40,
+                            justifyContent: "center",
+                            alignItems: "center",
+                            borderRadius: 10,
+                          }}
+                        >
+                          <Icon name="plus" color={"white"} size={24} />
+                        </View>
                       </View>
                     </View>
                   </Text>
                 </View>
               )}
             />
+            <Text
+              style={{
+                fontSize: 25,
+                color: Color.white,
+                marginVertical: 20,
+              }}
+            >
+              Coffee Beans
+            </Text>
           </View>
         )}
       />
@@ -209,5 +301,6 @@ const styles = StyleSheet.create({
     backgroundColor: Color.primary,
     flex: 1,
     paddingHorizontal: 24,
+    paddingBottom: 90,
   },
 });
