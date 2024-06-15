@@ -221,6 +221,25 @@ const IndPage = () => {
             </Text>
           </View>
           {/* DESCRIPTION */}
+
+          {/* SIZE */}
+          <View
+            style={{
+              paddingHorizontal: 24,
+            }}
+          >
+            <Text
+              style={{
+                color: Color.lightGray,
+                fontSize: 25,
+                fontWeight: "600",
+                marginTop: 20,
+              }}
+            >
+              Size
+            </Text>
+          </View>
+          {/* SIZE */}
         </View>
         /* CONTENT */
       ))}
