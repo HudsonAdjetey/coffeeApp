@@ -27,7 +27,9 @@ const IndPage = () => {
       }}
     >
       {data.map((item, index) => (
+        /* CONTENT */
         <View key={index}>
+          {/* HEADER BANNER */}
           <View
             style={{
               flexDirection: "row",
@@ -42,7 +44,7 @@ const IndPage = () => {
               resizeMode="cover"
               resizeMethod="resize"
             />
-
+            {/* SUBCONTENT */}
             <View
               style={{
                 position: "absolute",
@@ -64,6 +66,7 @@ const IndPage = () => {
                 }}
                 blurReductionFactor={1}
               />
+              {/* TITLE AND TOP ICONS */}
               <View
                 style={{
                   flexDirection: "row",
@@ -136,13 +139,21 @@ const IndPage = () => {
                   </View>
                 </View>
               </View>
-              <View>
+              {/* TITLE AND TOP ICONS */}
+              {/* BASE CONTENT */}
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  marginTop: 20,
+                }}
+              >
                 <View
                   style={{
                     flexDirection: "row",
                     alignItems: "center",
                     gap: 10,
-                    marginTop: 20,
                   }}
                 >
                   <Icon name="star-sharp" size={30} color={Color.secondary} />
@@ -156,26 +167,31 @@ const IndPage = () => {
                     4.5
                   </Text>
                 </View>
+                <View>
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      color: Color.white,
+                      maxWidth: 185,
+                      textAlign: "center",
+
+                      padding: 10,
+                      paddingVertical: 15,
+                      borderRadius: 10,
+                      backgroundColor: "#141921",
+                    }}
+                  >
+                    Medium Roasted
+                  </Text>
+                </View>
               </View>
-
-              <Text
-                style={{
-                  fontSize: 20,
-                  color: Color.white,
-                  maxWidth: 185,
-                  textAlign: "center",
-
-                  padding: 10,
-                  paddingVertical: 15,
-                  borderRadius: 10,
-                  backgroundColor: "#141921",
-                }}
-              >
-                Medium Roasted
-              </Text>
+              {/* BASE CONTENT */}
             </View>
+            {/* SUBCONTENT */}
           </View>
+          {/* HEADER BANNER */}
         </View>
+        /* CONTENT */
       ))}
     </View>
   );
