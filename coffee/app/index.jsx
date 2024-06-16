@@ -53,6 +53,7 @@ export default function App() {
             color: Color.lightGray,
             fontSize: 18,
             marginTop: 15,
+            textAlign: "center",
           }}
         >
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur
