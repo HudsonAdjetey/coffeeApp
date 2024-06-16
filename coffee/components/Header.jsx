@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { img } from "../constants/images";
+import Color from "../constants/Color";
 
 const Header = () => {
   return (
