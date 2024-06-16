@@ -278,7 +278,7 @@ const Page = () => {
             />
 
             {/* PRODUCT */}
-            <FlatList
+            {/*  <FlatList
               horizontal
               showsHorizontalScrollIndicator={false}
               style={{
@@ -413,7 +413,7 @@ const Page = () => {
                   </Text>
                 </View>
               )}
-            />
+            /> */}
             {/* PRODUCT */}
 
             <Text
