@@ -42,6 +42,32 @@ const IndPage = () => {
       }}
     >
       <ScrollView>
+        <View
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            width: "100%",
+            paddingHorizontal: 20,
+            zIndex: 900,
+            marginTop: 40,
+          }}
+        >
+          <TouchableOpacity
+            style={{
+              width: 40,
+              height: 40,
+              backgroundColor: "red",
+              borderRadius: 6,
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Icon name="chevron-back-sharp" size={30} color={Color.lightGray} />
+          </TouchableOpacity>
+        </View>
         {data.map((item, index) => (
           /* CONTENT */
           <View key={index}>
