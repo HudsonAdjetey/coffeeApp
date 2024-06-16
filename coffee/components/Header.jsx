@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { img } from "../constants/images";
 import Color from "../constants/Color";
 
-const Header = () => {
+const Header = ({ text }) => {
   return (
     <View>
       <View
@@ -22,7 +22,7 @@ const Header = () => {
             fontWeight: "600",
           }}
         >
-          Welcome back, Hudson
+          {text}
         </Text>
         <Image
           source={img.Profile}
