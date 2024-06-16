@@ -18,6 +18,7 @@ import Ionic from "react-native-vector-icons/Ionicons";
 import Icon from "react-native-vector-icons/FontAwesome6";
 import { DataContent, dataBeans } from "../../constants/dataContent";
 import { Link, router, usePathname } from "expo-router";
+import Product from "../../components/Product";
 
 const Page = () => {
   const [activeData, setActiveData] = useState(0);
@@ -270,7 +271,11 @@ const Page = () => {
                 </View>
               )}
             />
-
+            <Product
+              DataContent={DataContent}
+              Icon={Icon}
+              navigateToIndPage={navigateToIndPage}
+            />
             <Text
               style={{
                 fontSize: 25,

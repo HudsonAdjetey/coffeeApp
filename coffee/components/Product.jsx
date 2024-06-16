@@ -1,7 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React from "react";
+import Color from "../constants/Color";
 
-const Product = ({ DataContent }) => {
+const Product = ({ DataContent, navigateToIndPage, Icon }) => {
   return (
     <FlatList
       horizontal
