@@ -17,7 +17,7 @@ import { img } from "../../constants/images";
 import Ionic from "react-native-vector-icons/Ionicons";
 import Icon from "react-native-vector-icons/FontAwesome6";
 import { DataContent, dataBeans } from "../../constants/dataContent";
-import { router, usePathname } from "expo-router";
+import { Link, router, usePathname } from "expo-router";
 
 const Page = () => {
   const [activeData, setActiveData] = useState(0);
@@ -37,6 +37,7 @@ const Page = () => {
       );
     }
   };
+
   const { width } = Dimensions.get("screen" || "window");
   return (
     <SafeAreaView style={styles.container}>
@@ -312,14 +313,23 @@ const Page = () => {
                           flexDirection: "row",
                         }}
                       >
-                        <Image
+                        <TouchableOpacity
+                          onPress={() => navigateToIndPage(item)}
                           style={{
-                            width: "100%",
-                            borderRadius: 10,
-                            marginBottom: 15,
+                            alignItems: "center",
+                            justifyContent: "center",
+                            flexDirection: "row",
                           }}
-                          source={item.img}
-                        />
+                        >
+                          <Image
+                            style={{
+                              width: "100%",
+                              borderRadius: 10,
+                              marginBottom: 15,
+                            }}
+                            source={item.img}
+                          />
+                        </TouchableOpacity>
                       </View>
                       <Text
                         style={{
