@@ -19,6 +19,7 @@ import Icon from "react-native-vector-icons/FontAwesome6";
 import { DataContent, dataBeans } from "../../constants/dataContent";
 import { Link, router, usePathname } from "expo-router";
 import Product from "../../components/Product";
+import Header from "../../components/Header";
 
 const Page = () => {
   const [activeData, setActiveData] = useState(0);
@@ -166,33 +167,8 @@ const Page = () => {
         )}
         ListHeaderComponent={() => (
           <View>
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-                marginTop: 30,
-                alignItems: "center",
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 20,
-                  color: Color.lightGray,
-                  fontStyle: "italic",
-                  fontWeight: "600",
-                }}
-              >
-                Welcome back, Hudson
-              </Text>
-              <Image
-                source={img.Profile}
-                style={{
-                  width: 50,
-                  height: 50,
-                }}
-                resizeMode="cover"
-              />
-            </View>
+            {/* HEADER */}
+            <Header />
             <Text
               style={{
                 marginTop: 30,
