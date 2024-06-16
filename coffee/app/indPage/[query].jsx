@@ -18,6 +18,7 @@ const IndPage = () => {
   const { item } = useLocalSearchParams();
   const [data, setData] = useState([]);
   const [selectedSize, setSelectedSize] = useState("");
+  const [active, setActive] = useState(false);
   useEffect(() => {
     const decodedItem = JSON.parse(decodeURIComponent(item));
     if (decodedItem) {
@@ -32,6 +33,10 @@ const IndPage = () => {
   }, [item, data]);
   const handleSelectSize = (size) => {
     setSelectedSize(size);
+  };
+
+  const toggleHeart = () => {
+    setActive(!active);
   };
   const { width } = Dimensions.get("screen" || "window");
   return (
@@ -52,13 +57,15 @@ const IndPage = () => {
             paddingHorizontal: 20,
             zIndex: 900,
             marginTop: 40,
+            flexDirection: "row",
+            justifyContent: "space-between",
           }}
         >
           <TouchableOpacity
             style={{
-              width: 40,
-              height: 40,
-              backgroundColor: "red",
+              width: 45,
+              height: 45,
+              backgroundColor: "#21262E",
               borderRadius: 6,
               flexDirection: "row",
               alignItems: "center",
@@ -66,6 +73,19 @@ const IndPage = () => {
             }}
           >
             <Icon name="chevron-back-sharp" size={30} color={Color.lightGray} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{
+              width: 45,
+              height: 45,
+              backgroundColor: "#21262E",
+              borderRadius: 6,
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Icon name="heart" size={30} color={Color.red} />
           </TouchableOpacity>
         </View>
         {data.map((item, index) => (
