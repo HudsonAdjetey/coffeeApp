@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import Color from "../constants/Color";
 
-const ProductListing = () => {
+const ProductListing = ({ navigateToIndPage, item, width }) => {
   return (
     <View
       style={{
