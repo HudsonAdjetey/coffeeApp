@@ -7,7 +7,7 @@ import {
   Dimensions,
   ScrollView,
 } from "react-native";
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useNavigation } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { BlurView } from "expo-blur";
 import Color from "../../constants/Color";
@@ -19,6 +19,8 @@ const IndPage = () => {
   const [data, setData] = useState([]);
   const [selectedSize, setSelectedSize] = useState("");
   const [active, setActive] = useState(false);
+  const { width } = Dimensions.get("screen" || "window");
+  const navigation = useNavigation();
   useEffect(() => {
     const decodedItem = JSON.parse(decodeURIComponent(item));
     if (decodedItem) {
@@ -38,7 +40,9 @@ const IndPage = () => {
   const toggleHeart = () => {
     setActive(!active);
   };
-  const { width } = Dimensions.get("screen" || "window");
+  const goBack = () => {
+    navigation.goBack();
+  };
   return (
     <View
       style={{
