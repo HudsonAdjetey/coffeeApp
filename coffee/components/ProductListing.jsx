@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import Color from "../constants/Color";
 
-const ProductListing = ({ navigateToIndPage, item, width }) => {
+const ProductListing = ({ navigateToIndPage, item, width, Icon }) => {
   return (
     <View
       style={{
