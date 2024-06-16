@@ -20,6 +20,7 @@ import { DataContent, dataBeans } from "../../constants/dataContent";
 import { Link, router, usePathname } from "expo-router";
 import Product from "../../components/Product";
 import Header from "../../components/Header";
+import ProductListing from "../../components/ProductListing";
 
 const Page = () => {
   const [activeData, setActiveData] = useState(0);
@@ -56,7 +57,15 @@ const Page = () => {
               justifyContent: "space-between",
               gap: 20,
             }}
-          ></View>
+          >
+            {/* PRODUCT LISTING */}
+            <ProductListing
+              item={item}
+              width={width}
+              navigateToIndPage={() => navigateToIndPage()}
+            />
+            {/* PRODUCT LISTING */}
+          </View>
         )}
         ListHeaderComponent={() => (
           <View>
