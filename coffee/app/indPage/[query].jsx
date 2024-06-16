@@ -66,6 +66,7 @@ const IndPage = () => {
           }}
         >
           <TouchableOpacity
+            onPress={goBack}
             style={{
               width: 45,
               height: 45,
