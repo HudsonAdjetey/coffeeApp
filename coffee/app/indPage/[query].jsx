@@ -75,6 +75,7 @@ const IndPage = () => {
             <Icon name="chevron-back-sharp" size={30} color={Color.lightGray} />
           </TouchableOpacity>
           <TouchableOpacity
+            onPress={toggleHeart}
             style={{
               width: 45,
               height: 45,
@@ -85,7 +86,11 @@ const IndPage = () => {
               justifyContent: "center",
             }}
           >
-            <Icon name="heart" size={30} color={Color.red} />
+            <Icon
+              name="heart"
+              size={30}
+              color={active ? Color.red : Color.white}
+            />
           </TouchableOpacity>
         </View>
         {data.map((item, index) => (
