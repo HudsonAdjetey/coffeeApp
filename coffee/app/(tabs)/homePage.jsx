@@ -313,7 +313,7 @@ const Page = () => {
                           flexDirection: "row",
                         }}
                       >
-                        <TouchableOpacity
+                        <Link
                           onPress={() => navigateToIndPage(item)}
                           style={{
                             alignItems: "center",
@@ -329,7 +329,7 @@ const Page = () => {
                             }}
                             source={item.img}
                           />
-                        </TouchableOpacity>
+                        </Link>
                       </View>
                       <Text
                         style={{
