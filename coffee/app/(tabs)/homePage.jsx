@@ -168,7 +168,7 @@ const Page = () => {
         ListHeaderComponent={() => (
           <View>
             {/* HEADER */}
-            <Header />
+            <Header text={"Welcome back, Hudson"} />
             <Text
               style={{
                 marginTop: 30,
